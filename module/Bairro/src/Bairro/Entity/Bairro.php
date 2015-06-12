@@ -1,6 +1,6 @@
 <?php
 
-namespace Bairro\\Entity;
+namespace Bairro\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="bairro")
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Bairro\Entity\Bairro\Repository")
  */
 class Bairro
 {
@@ -29,5 +30,38 @@ class Bairro
     private $nome;
 
 
-}
 
+    /**
+     * Get idbairro
+     *
+     * @return integer
+     */
+    public function getIdbairro()
+    {
+        return $this->idbairro;
+    }
+
+    /**
+     * Set nome
+     *
+     * @param string $nome
+     *
+     * @return Bairro
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+    
+        return $this;
+    }
+
+    /**
+     * Get nome
+     *
+     * @return string
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+}
